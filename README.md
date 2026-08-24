@@ -96,8 +96,6 @@ The bundled example reproduces the reference prediction exactly
 (`prob_neural_high = 0.7973510`).
 
 ## Citation
-[Author list]. Intraoperative detection of a methylation-derived NeuralScore from nanopore
-sequencing in glioma: the EpiGuide study. *The Lancet* (2026). [DOI].
 
 ## License
 MIT (see `LICENSE`).
