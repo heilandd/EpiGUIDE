@@ -73,7 +73,7 @@ Tab/comma-separated, one row per CpG; duplicate CpGs are summed:
   edges with frozen, task-supervised weights. Node features: methylation call, observed mask,
   coverage. Masked mean pooling over observed nodes + mean over all nodes → MLP → logit.
 - Developed on external, dense EPIC methylation-array data with simulated sparse low-coverage
-  masking; applied unchanged to intraoperative data. See the manuscript appendix for the full spec.
+  masking; applied unchanged to intraoperative data. 
 - Bundle (`model/`): `model_state.pt`, `model_cpgs.csv`, `edge_index.npy`, `edge_attr.npy`,
   `bundle_metadata.json`, `model_cpgs_hg38.bed` (hg38 coordinates of the panel-covered CpGs;
   the rCNS2 intraoperative panel covers ~2600 of the 4921 graph CpGs — the rest are masked, the
