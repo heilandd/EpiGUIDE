@@ -1,0 +1,7 @@
+# EpiGuide NeuroScore — core runtime
+numpy<2            # required by torch 2.2 (do NOT use numpy>=2)
+torch>=2.0,<2.3
+torch-geometric>=2.3
+pandas>=1.5
+# BAM -> calls also needs `modkit` on PATH (external, not pip):
+#   https://github.com/nanoporetech/modkit

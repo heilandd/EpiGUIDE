@@ -1,0 +1,28 @@
+{
+  "created": "2026-04-28T13:32:21.201186",
+  "model_class_name": "SparseForcedEdgeGNN",
+  "model_config": {
+    "node_in_dim": 3,
+    "hidden_dim": 16,
+    "num_layers": 2,
+    "dropout": 0.05
+  },
+  "threshold": 0.5,
+  "confidence_thresholds": {
+    "high": 0.85,
+    "intermediate": 0.65,
+    "low": 0.0
+  },
+  "n_cpgs": 4921,
+  "n_edges": 98420,
+  "training_metrics": null,
+  "extra_metadata": {
+    "beta_source": "R/minfi preprocessing",
+    "edge_source": "task-supervised learned CpG edge weights",
+    "node_features": [
+      "methylation_call",
+      "observed_mask",
+      "coverage_norm"
+    ]
+  }
+}
