@@ -7,7 +7,7 @@ methylation calls available during surgery, using a sparse graph neural network
 (`SparseForcedEdgeGNN`) over a fixed 4921-CpG similarity graph with masked pooling.
 
 This repository contains the **trained model** (`model/`) and a **minimal BAM→NeuralScore**
-pipeline. It accompanies the EpiGuide manuscript.
+pipeline. 
 
 > Research use only. Not a medical device.
 
