@@ -1,12 +1,12 @@
-# EpiGuide NeuroScore
+# EpiGuide NeuralScore
 
-Predict a binary **NeuroScore** (neural-high vs neural-low) from **intraoperative nanopore
-sequencing** of a glioma, in seconds, from a single BAM. The NeuroScore is a methylation-derived
+Predict a binary **NeuralScore** (neural-high vs neural-low) from **intraoperative nanopore
+sequencing** of a glioma, in seconds, from a single BAM. The NeuralScore is a methylation-derived
 marker of neural / non-tumour tissue content; EpiGuide reconstructs it from the sparse per-CpG
 methylation calls available during surgery, using a sparse graph neural network
 (`SparseForcedEdgeGNN`) over a fixed 4921-CpG similarity graph with masked pooling.
 
-This repository contains the **trained model** (`model/`) and a **minimal BAM→NeuroScore**
+This repository contains the **trained model** (`model/`) and a **minimal BAM→NeuralScore**
 pipeline. It accompanies the EpiGuide manuscript.
 
 > Research use only. Not a medical device.
@@ -96,7 +96,7 @@ The bundled example reproduces the reference prediction exactly
 (`prob_neural_high = 0.7973510`).
 
 ## Citation
-[Author list]. Intraoperative detection of a methylation-derived NeuroScore from nanopore
+[Author list]. Intraoperative detection of a methylation-derived NeuralScore from nanopore
 sequencing in glioma: the EpiGuide study. *The Lancet* (2026). [DOI].
 
 ## License
