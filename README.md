@@ -34,7 +34,7 @@ pipeline accompanying the EpiGuide manuscript.
 
 ---
 
-## ⚡ Quick start
+## Quick start
 
 ```bash
 git clone <this-repo> && cd Repository
@@ -63,7 +63,7 @@ print(predict_from_calls(bundle, "example/example_calls.tsv"))
 > `pileup --include-bed` CLI. Exact versions, the tested command, and an automatic
 > compatibility fallback are documented in [`VERSIONS.md`](VERSIONS.md).
 
-## 📥 Input — per-CpG calls table
+## Input — per-CpG calls table
 
 Tab- or comma-separated, one row per CpG (duplicate CpGs are summed):
 
@@ -74,7 +74,7 @@ Tab- or comma-separated, one row per CpG (duplicate CpGs are summed):
 | `unmethylation_calls` | unmethylated read count |
 | `total_calls` | total reads *(optional; else meth + unmeth)* |
 
-## 📤 Output
+## Output
 
 ```json
 {
@@ -88,7 +88,7 @@ Tab- or comma-separated, one row per CpG (duplicate CpGs are summed):
 `prob_neural_high` = P(neural-high); the class is neural-high if ≥ `threshold` (0·5).
 `confidence` = max(p, 1−p); categories: **high** ≥ 0·85, **intermediate** ≥ 0·65, else **low**.
 
-## 🧠 Model
+## Model
 
 - **`SparseForcedEdgeGNN`** — 2 message-passing layers (hidden 16) over **4921 CpG nodes** and
   **98 420** directed edges with frozen, task-supervised weights. Node features: methylation
@@ -101,7 +101,7 @@ Tab- or comma-separated, one row per CpG (duplicate CpGs are summed):
   The rCNS2 intraoperative panel covers ≈ 2600 of the 4921 graph CpGs; the rest are masked — the
   designed low-coverage operating regime.
 
-## 📁 Layout
+## Layout
 
 ```text
 neuralscore/
@@ -114,14 +114,13 @@ model/             trained weights + CpG graph + hg38 bed
 example/           example_calls.tsv
 ```
 
-## ✅ Reproducibility
+## Reproducibility
 
 The bundled example reproduces the reference prediction exactly — `prob_neural_high = 0.7973510`.
 
-## 📑 Citation
+## Citation
 
-> [Author list]. **Intraoperative detection of a methylation-derived NeuroScore from nanopore
-> sequencing in glioma: the EpiGuide study.** *The Lancet* (2026). [DOI].
+Hope comming soon!
 
 ## ⚖️ License
 
