@@ -37,10 +37,12 @@ pipeline accompanying the EpiGuide manuscript.
 ## Quick start
 
 ```bash
-git clone <this-repo> && cd Repository
+git clone https://github.com/heilandd/EpiGUIDE.git && cd EpiGUIDE
 python -m pip install -r requirements.txt          # torch, torch-geometric, numpy<2, pandas
+
 # for BAM input also install the TESTED modkit (0.3.0 — see VERSIONS.md):
 conda install -c bioconda ont-modkit=0.3.0         # https://github.com/nanoporetech/modkit
+
 ```
 
 ```bash
