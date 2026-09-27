@@ -2,7 +2,7 @@
 
 <img src="assets/logo.png" alt="EpiGuide" width="720"/>
 
-<h1>EpiGuide&nbsp;·&nbsp;NeuroScore</h1>
+<h1>EpiGuide&nbsp;·&nbsp;NeuralScore</h1>
 
 <b>Intraoperative methylation NeuroScore from nanopore sequencing — in seconds, from one BAM.</b>
 
@@ -19,7 +19,7 @@
 
 <br/>
 
-The **NeuroScore** is a methylation-derived marker of neural / non-tumour tissue content.
+The **NeuralScore** is a methylation-derived marker of neural / non-tumour tissue content.
 EpiGuide reconstructs its binary form — **neural-high** vs **neural-low** — from the sparse,
 low-coverage per-CpG methylation calls available *during surgery*, using a sparse graph neural
 network (`SparseForcedEdgeGNN`) over a fixed 4921-CpG similarity graph with masked pooling.
@@ -27,7 +27,7 @@ This repository contains the **trained model** (`model/`) and a **minimal BAM �
 pipeline accompanying the EpiGuide manuscript.
 
 ```text
-   BAM (ONT 5mC, hg38)  ──modkit──▶  per-CpG calls  ──GNN──▶  NeuroScore + confidence
+   BAM (ONT 5mC, hg38)  ──modkit──▶  per-CpG calls  ──GNN──▶  NeuralScore + confidence
 ```
 
 <div align="center"><sub>⚕️ Research use only — not a medical device.</sub></div>
