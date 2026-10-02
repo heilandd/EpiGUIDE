@@ -20,6 +20,7 @@ def load_bundle(bundle_dir, device=None):
         "edge_attr": np.load(bundle_dir / "edge_attr.npy"),
         "model_cpgs": pd.read_csv(bundle_dir / "model_cpgs.csv")["CpGs"].astype(str).tolist(),
         "threshold": float(meta["threshold"]),
+        "valid_call_threshold": float(meta.get("valid_call_threshold", 0.65)),
         "confidence_thresholds": meta["confidence_thresholds"],
         "metadata": meta,
         "device": device,

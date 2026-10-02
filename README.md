@@ -81,14 +81,19 @@ Tab- or comma-separated, one row per CpG (duplicate CpGs are summed):
 ```json
 {
   "prob_neural_high": 0.80, "pred_label": "neural_high",
-  "confidence": 0.80, "confidence_category": "intermediate_confidence",
+  "confidence": 0.80, "confidence_category": "high_confidence",
+  "reportable": true, "valid_call_threshold": 0.65,
   "threshold": 0.5, "n_overlap": 1264, "n_observed_overlap": 1264,
   "observed_fraction_model": 0.26, "mean_coverage_observed": 1.0
 }
 ```
 
 `prob_neural_high` = P(neural-high); the class is neural-high if ≥ `threshold` (0·5).
-`confidence` = max(p, 1−p); categories: **high** ≥ 0·85, **intermediate** ≥ 0·65, else **low**.
+`confidence` = max(p, 1−p), reported in three classes: **low** < 0·65 (inconclusive, not reported),
+**intermediate** 0·65–0·80 (reportable), **high** ≥ 0·80 (reportable, high confidence).
+`reportable` is `true` when `confidence ≥ valid_call_threshold` (0·65) — the prespecified criterion for
+a valid intraoperative call. The 0·80 boundary and higher operating points are post-hoc; the primary
+endpoint (AUC) is threshold-free.
 
 ## Model
 

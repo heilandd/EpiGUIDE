@@ -50,8 +50,9 @@ def calls_to_data(path_or_df, bundle, max_coverage=3,
 
 
 def _confidence_category(confidence, bundle):
+    # Three prespecified classes: low (<0.65), intermediate (0.65-0.80), high (>=0.80).
     th = bundle["confidence_thresholds"]
-    if confidence >= th.get("high", 0.85): return "high_confidence"
+    if confidence >= th.get("high", 0.80): return "high_confidence"
     if confidence >= th.get("intermediate", 0.65): return "intermediate_confidence"
     return "low_confidence"
 
@@ -64,7 +65,11 @@ def predict_from_calls(bundle, path_or_df, max_coverage=3):
     threshold = float(bundle["threshold"])
     pred = int(prob_high >= threshold)
     confidence = max(prob_high, 1 - prob_high)
+    # A valid intraoperative call is prespecified as confidence >= 0.65 (intermediate or high).
+    valid_call_threshold = float(bundle.get("valid_call_threshold", 0.65))
+    reportable = bool(confidence >= valid_call_threshold)
     return {"prob_neural_high": prob_high, "pred_binary": pred,
             "pred_label": "neural_high" if pred else "neural_low",
             "confidence": confidence, "confidence_category": _confidence_category(confidence, bundle),
+            "reportable": reportable, "valid_call_threshold": valid_call_threshold,
             "threshold": threshold, **summary}

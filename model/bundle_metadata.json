@@ -8,11 +8,13 @@
     "dropout": 0.05
   },
   "threshold": 0.5,
+  "valid_call_threshold": 0.65,
   "confidence_thresholds": {
-    "high": 0.85,
+    "high": 0.80,
     "intermediate": 0.65,
     "low": 0.0
   },
+  "confidence_scheme": "Prediction confidence = max(p, 1-p). Three classes: low (<0.65; inconclusive, not reported), intermediate (0.65-0.80; reportable), high (>=0.80; reportable, high confidence). A valid intraoperative call is prespecified as confidence >= valid_call_threshold (0.65); the 0.80 boundary and higher operating points are post-hoc/exploratory. The primary endpoint (AUC) is threshold-free.",
   "n_cpgs": 4921,
   "n_edges": 98420,
   "training_metrics": null,
